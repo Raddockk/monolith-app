@@ -43,6 +43,19 @@ builder.Services
 .AddScoped<IUserService,UserService>()
 .AddTransient<IUserRepository, UserRepository>();
 
+var Front = "_Front";
+// policy.WithOrigins("http://127.0.0.1:5500");
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(Front, policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {options.TokenValidationParameters = new TokenValidationParameters
