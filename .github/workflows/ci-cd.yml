@@ -58,7 +58,7 @@ jobs:
             docker pull ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/monolith-webapi:latest
             docker stop monolith-app || true
             docker rm monolith-app || true
-            docker run -d --name monolith-app -p 8080:8080 \
+            docker run -d --name monolith-app -p 8082:8080 \
               -e DB_HOST="${{ secrets.DB_HOST }}" \
               -e DB_PORT="${{ secrets.DB_PORT }}" \
               -e DB_NAME="${{ secrets.DB_NAME }}" \
