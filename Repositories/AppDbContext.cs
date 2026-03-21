@@ -46,7 +46,7 @@ public DbSet<User> UserList { get; set; }
         var host = Environment.GetEnvironmentVariable("DB_HOST");
         var port = Environment.GetEnvironmentVariable("DB_PORT");
         var database = Environment.GetEnvironmentVariable("DB_NAME");
-        var username = Environment.GetEnvironmentVariable("DB_USERNAME");
+        var username = Environment.GetEnvironmentVariable("DB_USER");
         var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
         // Формируем строку подключения
