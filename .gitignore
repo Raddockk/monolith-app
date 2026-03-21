@@ -1,0 +1,16 @@
+# === СЕКРЕТЫ ===
+.env.local
+.env*.local
+
+# === СБОРКА ===
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+*.pdb
+
+# === IDE ===
+.vs/
+.vscode/
+*.user
+*.suo
