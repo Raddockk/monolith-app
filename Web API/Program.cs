@@ -6,16 +6,6 @@ using Microsoft.IdentityModel.Tokens;
 using Global;
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowFrontend", policy =>
-    {
-        policy.AllowAnyOrigin() // Укажи нужные URL фронтенда
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
-
 builder.Services.AddOpenApi();
 
 builder.Services
